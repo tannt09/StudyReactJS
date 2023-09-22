@@ -1,9 +1,17 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 
-const LoginItem = ({params}) => {
+const LoginItem = ({ params }) => {
   return (
     <>
-      <h1>Test</h1>
+      <input
+        placeholder={params.placeholder}
+        style={{
+          padding: "10px",
+          border: "1px solid black",
+          backgroundColor: "white",
+        }}
+      ></input>
+      <span style={{ color: "red", textAlign: "left" }}>{params.label}</span>
     </>
   );
 };

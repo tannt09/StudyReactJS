@@ -1,13 +1,12 @@
-import { useState } from 'react'
 import './App.css'
-import { LoginScreen } from './views'
+import { SliderScreen } from './views'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <LoginScreen/>
+      {/* <LoginScreen/> */}
+      <SliderScreen/>
     </>
   )
 }
