@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       {/* <LoginScreen /> */}
-      <SliderScreen />
+   <SliderScreen />
     </>
   )
 }
