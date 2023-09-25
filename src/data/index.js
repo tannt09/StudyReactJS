@@ -1,1 +1,1 @@
-export { default as FromData } from "./FromData"
+export { default as FromData } from './FromData'

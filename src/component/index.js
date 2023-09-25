@@ -1,3 +1,3 @@
-import { LoginItem } from "./LoginItem";
+import { LoginItem } from './LoginItem'
 
 export { LoginItem }
