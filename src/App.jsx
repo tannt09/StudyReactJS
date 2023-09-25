@@ -3,7 +3,7 @@ import './App.css'
 import { SliderScreen } from '@/views'
 
 function App() {
-  console.log("Test eslint :::: ")
+  console.log('Test eslint ::::1111 ')
   return (
     <>
       {/* <LoginScreen /> */}
