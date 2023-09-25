@@ -1,11 +1,12 @@
 import './App.css'
-import { SliderScreen } from './views'
+import { SliderScreen } from '@/views'
+
 
 function App() {
 
   return (
     <>
-      {/* <LoginScreen/> */}
+      {/* <LoginScreen /> */}
       <SliderScreen/>
     </>
   )

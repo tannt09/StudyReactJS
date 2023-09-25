@@ -1,6 +1,6 @@
-import { LoginItem } from "../component";
 import { FromData } from "../data";
-
+import { LoginItem } from "@/component"
+ 
 const LoginScreen = () => {
   return (
     <>
