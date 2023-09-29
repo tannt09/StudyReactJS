@@ -4,7 +4,7 @@ import React from 'react'
 const TestUseEffect = () => {
   const [data, setData] = React.useState([])
   const [newData, setNewData] = React.useState([])
-  // const [error, setError] = React.useState()
+  const [error, setError] = React.useState()
   const [loading, setLoading] = React.useState(false)
 
   const handleApiUser = () => {
@@ -14,12 +14,12 @@ const TestUseEffect = () => {
       .then((rs) => {
         setData(rs.data)
         setNewData(rs.data)
-        // setError()
+        setError()
         setLoading(false)
       })
       .catch((er) => {
         console.log('Error ::::1111 ' + er)
-        // setError(er)
+        setError(er)
         setLoading(false)
       })
   }
@@ -38,7 +38,7 @@ const TestUseEffect = () => {
     )
   }
 
-  // console.log('Error ::::2222 ' + error)
+  console.log('Error ::::2222 ' + error)
   return (
     <>
       {loading && <h1>Loading...</h1>}
