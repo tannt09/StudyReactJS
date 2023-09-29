@@ -18,7 +18,7 @@ const TestUseEffect = () => {
         setLoading(false)
       })
       .catch((er) => {
-        console.log('Error :::: ' + er)
+        console.log('Error ::::1111 ' + er)
         // setError(er)
         setLoading(false)
       })
