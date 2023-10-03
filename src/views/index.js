@@ -1,3 +1,6 @@
 export { default as LoginScreen } from './LoginScreen'
 export { default as SliderScreen } from './SliderScreen'
 export { default as TestUseEffect } from './TestUseEffect'
+export { default as HomeScreen } from './HomeScreen'
+export { default as ContactScreen } from './ContactScreen'
+export { default as AboutScreen } from './AboutScreen'

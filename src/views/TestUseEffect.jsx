@@ -38,7 +38,7 @@ const TestUseEffect = () => {
     )
   }
 
-  console.log('Error ::::1111 ' + error)
+  console.log('Error ::::2222 ' + error)
   return (
     <>
       {loading && <h1>Loading...</h1>}
