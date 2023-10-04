@@ -6,7 +6,7 @@ const DetailScreen = () => {
   const location = useLocation()
 
   console.log('ID :::: ' + id)
-  return <h1>{'DetailScreen' + location.state.name}</h1>
+  return <h1>{'DetailScreen' + location.state.emailTest}</h1>
 }
 
 export default DetailScreen

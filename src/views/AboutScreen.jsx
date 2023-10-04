@@ -27,12 +27,15 @@ const AboutScreen = () => {
     <>
       {loading ?? <h1>Loading...</h1>}
       <nav>
-        <ul className="WenUserDetail">
+        <ul className="WebUserDetail">
           {data.map((item) => {
+            const dataTransmit = {
+              nameTest: item.name,
+              emailTest: item.email,
+            }
             return (
               <li key={item.id}>
-                <NavLink to={'detail/' + item.id} state={item}>
-                  {' '}
+                <NavLink to={'detail/' + item.id} state={dataTransmit}>
                   Detail {item.id}
                 </NavLink>
               </li>
