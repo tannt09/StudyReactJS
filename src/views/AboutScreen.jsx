@@ -27,18 +27,21 @@ const AboutScreen = () => {
     <>
       {loading ?? <h1>Loading...</h1>}
       <nav>
-        <ul className="WebUserDetail">
+        <ul
+          className="WebUserDetail"
+          style={{ display: 'flex', flexDirection: 'row' }}
+        >
           {data.map((item) => {
             const dataTransmit = {
               nameTest: item.name,
               emailTest: item.email,
             }
             return (
-              <li key={item.id}>
+              <h5 key={item.id} style={{ marginRight: '20px' }}>
                 <NavLink to={'detail/' + item.id} state={dataTransmit}>
                   Detail {item.id}
                 </NavLink>
-              </li>
+              </h5>
             )
           })}
         </ul>
