@@ -1,11 +1,13 @@
 import React from 'react'
 import axios from 'axios'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { NavLink, useRoutes } from 'react-router-dom'
 import { DetailScreen } from '.'
 
 const AboutScreen = () => {
   const [data, setData] = React.useState([])
   const [loading, setLoading] = React.useState(false)
+
+  const element = useRoutes([{ path: 'detail/:id', element: <DetailScreen /> }])
 
   const handleApiUser = () => {
     setLoading(true)
@@ -46,9 +48,7 @@ const AboutScreen = () => {
           })}
         </ul>
       </nav>
-      <Routes>
-        <Route path="detail/:id" element={<DetailScreen />} />
-      </Routes>
+      {element}
     </>
   )
 }
