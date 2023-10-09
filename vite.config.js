@@ -6,10 +6,7 @@ import { fileURLToPath, URL } from 'url'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
-  plugins: [
-    react(),
-    jsconfigPaths,
-  ],
+  plugins: [react(), jsconfigPaths],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
