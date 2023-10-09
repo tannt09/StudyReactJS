@@ -14,10 +14,6 @@ const LoginScreen = () => {
           padding: '10px 20px',
         }}
       >
-
-
-
-        
         <h1 style={{ color: 'black' }}>LoginScreen</h1>
         {FromData.map((item) => {
           return <LoginItem key={item.id} params={item} />

@@ -8,7 +8,6 @@
     "build": "vite build",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "prettier:fix": "prettier --write \"src/**/*.{js,jsx}\"",
-    "prettier:check": "prettier . --check \"src/**/*.{js,jsx}\"",
     "preview": "vite preview",
     "prepare": "husky install"
   },
@@ -61,7 +60,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx}": [
       "npm run lint",
-      "npx prettier:check"
+      "npx prettier . --check"
     ],
     "*.js": "eslint --cache --fix"
   }
