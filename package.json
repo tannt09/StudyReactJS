@@ -59,10 +59,8 @@
     "vite-plugin-compression": "^0.5.1"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "npm run prettier:fix",
-      "npm run lint",
-      "git add ."
+    "src/**/*.{js,jsx}": [     
+      "npm run lint"
     ],
     "*.js": "eslint --cache --fix"
   }
