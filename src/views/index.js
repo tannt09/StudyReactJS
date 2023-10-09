@@ -1,8 +1,10 @@
 export { default as LoginScreen } from './LoginScreen'
 export { default as SliderScreen } from './SliderScreen'
 export { default as TestUseEffect } from './TestUseEffect'
-export { default as HomeScreen } from './HomeScreen'
-export { default as ContactScreen } from './ContactScreen'
-export { default as AboutScreen } from './AboutScreen'
-export { default as Layout } from './Layout'
-export { default as DetailScreen } from './DetailScreen'
+export {
+  AboutScreen,
+  ContactScreen,
+  DetailScreen,
+  HomeScreen,
+  Layout,
+} from './TestRoutesPages'
