@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import { TestReduxSaga } from '@/views'
 import { Provider } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import RootReducer from '@/store/RootReducer'
 import createSagaMiddleware from 'redux-saga'
+import { LayoutRoutes } from '@/routers'
 
 function App() {
   const sagaMiddleware = createSagaMiddleware()
@@ -16,10 +16,10 @@ function App() {
   return (
     <>
       <Provider store={store}>
-        <TestReduxSaga />
+        {/* <TestReduxSaga /> */}
+        {/* <TestUseEffect /> */}
+        <LayoutRoutes />
       </Provider>
-      {/* <TestUseEffect /> */}
-      {/* <LayoutRoutes /> */}
     </>
   )
 }

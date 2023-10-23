@@ -1,6 +1,12 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
-import { Layout, HomeScreen, ContactScreen, AboutScreen } from '@/views'
+import {
+  Layout,
+  HomeScreen,
+  ContactScreen,
+  AboutScreen,
+  NotFound,
+} from '@/views'
 
 const LayoutRoutes = () => {
   const routes = useRoutes([
@@ -12,6 +18,10 @@ const LayoutRoutes = () => {
         { path: '/contact', element: <ContactScreen /> },
         { path: '/about/*', element: <AboutScreen /> },
       ],
+    },
+    {
+      path: '*',
+      element: <NotFound />,
     },
   ])
 

@@ -8,4 +8,5 @@ export {
   DetailScreen,
   HomeScreen,
   Layout,
+  NotFound,
 } from './TestRoutesPages'
