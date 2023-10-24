@@ -1,3 +1,2 @@
-import { LoginItem } from './LoginItem'
-
-export { LoginItem }
+export { LoginItem } from './LoginItem'
+export { default as CustomNavLink } from './CustomNavLink'

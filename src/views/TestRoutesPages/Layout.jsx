@@ -1,43 +1,21 @@
+import { CustomNavLink } from '@/component'
 import React from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
   return (
     <>
-      <nav>
-        <ul className="WebHeader">
-          <li>
-            <NavLink
-              to="/home"
-              style={(data) => ({
-                color: data.isActive ? 'red' : 'blue',
-              })}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              style={(data) => ({
-                color: data.isActive ? 'red' : 'blue',
-              })}
-            >
-              Contact
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              style={(data) => ({
-                color: data.isActive ? 'red' : 'blue',
-              })}
-            >
-              About
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+      <header>
+        <h1>Header 1111</h1>
+        <nav>
+          <ul className="WebHeader">
+            <CustomNavLink params={{ link: '/home', namePage: 'Home' }} />
+            <CustomNavLink params={{ link: '/contact', namePage: 'Contact' }} />
+            <CustomNavLink params={{ link: '/about', namePage: 'About' }} />
+          </ul>
+        </nav>
+      </header>
+
       <Outlet />
     </>
   )

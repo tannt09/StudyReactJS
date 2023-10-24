@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 const ContactScreen = () => {
   const [searchParams, setSearchParams] = useSearchParams()
+  const [value, setValue] = React.useState('')
 
-  const userId = searchParams.get('userId')
-  const [value, setValue] = React.useState(userId)
+  useEffect(() => {
+    setSearchParams({ userId: value })
+  }, [value])
 
   const handleChangeText = (event) => {
-    setValue(
-      setValue(event.target.value),
-      setSearchParams({
-        userId: event.target.value,
-      }),
-    )
+    setValue(event.target.value)
   }
+
+  console.log(searchParams.get('userId'))
 
   return <input value={value} onChange={handleChangeText}></input>
 }
