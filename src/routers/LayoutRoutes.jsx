@@ -7,6 +7,7 @@ import {
   AboutScreen,
   NotFound,
 } from '@/views'
+import { TodoList } from '@/libs/Redux/react-redux/Learn_1'
 
 const LayoutRoutes = () => {
   const routes = useRoutes([
@@ -22,6 +23,10 @@ const LayoutRoutes = () => {
     {
       path: '*',
       element: <NotFound />,
+    },
+    {
+      path: '/todoList',
+      element: <TodoList />,
     },
   ])
 
