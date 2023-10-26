@@ -1,10 +1,14 @@
+import { v4 as uuidv4 } from 'uuid'
+
 const initialState = {
   todo: [
     {
+      id: uuidv4,
       task: 'Nguyen Van A',
       completed: false,
     },
     {
+      id: uuidv4,
       task: 'Nguyen Van B',
       completed: true,
     },
@@ -12,7 +16,8 @@ const initialState = {
 }
 
 const TestReducer = (state = initialState, action) => {
-  switch (action.type) {
+  const { type } = action
+  switch (type) {
     case 'TEXT_REDUX':
       console.log('Get payload ::::1111' + action.payload)
       return {
