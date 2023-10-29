@@ -29,6 +29,7 @@ const initialState = {
       completed: true,
     },
   ],
+  loading: false,
 }
 
 const TodoReducer = (state = initialState, action) => {
@@ -42,6 +43,12 @@ const TodoReducer = (state = initialState, action) => {
       })
       return {
         ...state,
+        loading: false,
+      }
+    case ActionType.COMPLETE_USER_PENDING_ACTION:
+      return {
+        ...state,
+        loading: true,
       }
     default:
       return state

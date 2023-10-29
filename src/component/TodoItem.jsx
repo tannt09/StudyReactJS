@@ -2,13 +2,19 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import '@/libs/Redux/react-redux/Learn_1/styles.css'
-import { completeAction } from '@/libs/Redux/react-redux/Learn_1/redux/Action'
+import {
+  completeAction,
+  completePendingAction,
+} from '@/libs/Redux/react-redux/Learn_1/redux/Action'
 
 const TodoItem = ({ props }) => {
   const dispatch = useDispatch()
 
   const handleComplete = () => {
-    dispatch(completeAction(props.id))
+    setTimeout(() => {
+      dispatch(completeAction(props.id))
+    }, 2000)
+    dispatch(completePendingAction())
   }
 
   return (

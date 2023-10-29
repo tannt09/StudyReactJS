@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useStoreTodo } from '@/hook/useStoreTodo'
 import { TodoItem } from '@/component'
 
 const TodoList = () => {
-  const { todo } = useStoreTodo()
+  const [loadingTodoList, setLoadingTodoList] = useState(false)
+  const { todo, loading } = useStoreTodo()
 
-  return (
+  useEffect(() => {
+    setLoadingTodoList(loading)
+    console.log('Loading ::::3333' + loading)
+  }, [loading])
+
+  return loadingTodoList ? (
+    <h1>Loading....</h1>
+  ) : (
     <div className="TodoList">
       <h1>Test Todo List</h1>
       {todo.map((item) => {
