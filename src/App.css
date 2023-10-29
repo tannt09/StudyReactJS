@@ -47,16 +47,6 @@
   height: 80%;
 }
 
-.todo-item-not-complete {
-  text-decoration: line-through;
-  width: medium;
-}
-
-.todo-item-complete {
-  text-decoration: none;
-  width: medium;
-}
-
 body {
   background-color: aquamarine;
 }
