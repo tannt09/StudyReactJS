@@ -12,6 +12,21 @@ const initialState = {
       task: 'Nguyen Van B',
       completed: true,
     },
+    {
+      id: uuidv4,
+      task: 'Nguyen Van C',
+      completed: true,
+    },
+    {
+      id: uuidv4,
+      task: 'Nguyen Van D',
+      completed: true,
+    },
+    {
+      id: uuidv4,
+      task: 'Nguyen Van E',
+      completed: true,
+    },
   ],
 }
 
