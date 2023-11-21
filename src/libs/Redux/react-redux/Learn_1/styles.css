@@ -1,9 +1,20 @@
 .todo-item-not-complete {
   text-decoration: line-through;
   width: medium;
+  color: black;
+  padding: 20px;
 }
 
 .todo-item-complete {
   text-decoration: none;
   width: medium;
+  color: black;
+  padding: 20px;
+}
+.todo-item-delete {
+  margin: auto;
+  color: brown;
+}
+.todo-item-edit {
+  margin: auto;
 }

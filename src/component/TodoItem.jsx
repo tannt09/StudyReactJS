@@ -1,10 +1,18 @@
 /* eslint-disable react/prop-types */
+// LIB
 import React from 'react'
 import { useDispatch } from 'react-redux'
+
+// IMPORT
 import '@/libs/Redux/react-redux/Learn_1/styles.css'
 import {
-  completeAction,
+  completeErrorAction,
   completePendingAction,
+  completeSuccessAction,
+  deleteErrorAction,
+  deletePendingAction,
+  deleteSuccessAction,
+  editSuccessAction,
 } from '@/libs/Redux/react-redux/Learn_1/redux/Action'
 
 const TodoItem = ({ props }) => {
@@ -12,20 +20,61 @@ const TodoItem = ({ props }) => {
 
   const handleComplete = () => {
     setTimeout(() => {
-      dispatch(completeAction(props.id))
-    }, 2000)
+      try {
+        dispatch(completeSuccessAction(props.id))
+      } catch (err) {
+        dispatch(completeErrorAction(err))
+      }
+    }, 1000)
     dispatch(completePendingAction())
   }
 
-  return (
-    <h4
-      className={
-        props.completed ? 'todo-item-complete' : 'todo-item-not-complete'
+  const handleDelete = () => {
+    setTimeout(() => {
+      try {
+        dispatch(deleteSuccessAction(props.id))
+      } catch (err) {
+        dispatch(deleteErrorAction(err))
       }
-      onClick={handleComplete}
-    >
-      {props.task}
-    </h4>
+    }, 1000)
+    dispatch(deletePendingAction())
+  }
+
+  const handleEdit = ({ user }) => {
+    setTimeout(() => {
+      try {
+        dispatch(editSuccessAction(user))
+      } catch (err) {
+        // dispatch(deleteErrorAction(err))
+      }
+    }, 1000)
+    dispatch(deletePendingAction())
+  }
+
+  return (
+    <>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <h4
+          className={
+            props.completed ? 'todo-item-complete' : 'todo-item-not-complete'
+          }
+          onClick={handleComplete}
+        >
+          {props.task}
+        </h4>
+        <button
+          className="todo-item-edit"
+          onClick={() =>
+            handleEdit({ user: { name: 'Test1111', id: props.id } })
+          }
+        >
+          Edit
+        </button>
+        <button className="todo-item-delete" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
+    </>
   )
 }
 

@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <>
       <header>
-        <h1>Header 1111</h1>
+        <h1>Header</h1>
         <nav>
           <ul className="WebHeader">
             <CustomNavLink params={{ link: '/home', namePage: 'Home' }} />

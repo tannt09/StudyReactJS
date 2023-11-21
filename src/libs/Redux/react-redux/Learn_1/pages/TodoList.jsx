@@ -8,7 +8,6 @@ const TodoList = () => {
 
   useEffect(() => {
     setLoadingTodoList(loading)
-    console.log('Loading ::::3333' + loading)
   }, [loading])
 
   return loadingTodoList ? (
