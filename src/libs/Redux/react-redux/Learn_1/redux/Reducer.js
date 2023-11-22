@@ -67,6 +67,11 @@ const TodoReducer = (state = initialState, action) => {
         ...state,
         loading: true,
       }
+    case ActionType.DELETE_USER_ERROR_ACTION:
+      return {
+        ...state,
+        error: action.payload,
+      }
     case ActionType.EDIT_USER_SUCCESS_ACTION:
       state.todo.map((item) => {
         if (item.id === action.payload.id) {
@@ -82,6 +87,11 @@ const TodoReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
+      }
+    case ActionType.EDIT_USER_ERROR_ACTION:
+      return {
+        ...state,
+        error: action.payload,
       }
     default:
       return state

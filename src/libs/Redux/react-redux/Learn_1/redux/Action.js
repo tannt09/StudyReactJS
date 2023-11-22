@@ -39,3 +39,8 @@ export const editSuccessAction = (name) => ({
 export const editPendingAction = () => ({
   type: ActionType.EDIT_USER_PENDING_ACTION,
 })
+
+export const editErrorAction = (error) => ({
+  type: ActionType.EDIT_USER_ERROR_ACTION,
+  payload: error,
+})

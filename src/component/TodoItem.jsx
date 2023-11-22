@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 // LIB
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 // IMPORT
 import '@/libs/Redux/react-redux/Learn_1/styles.css'
+import '@/component/popup.css'
 import {
   completeErrorAction,
   completePendingAction,
@@ -12,10 +13,11 @@ import {
   deleteErrorAction,
   deletePendingAction,
   deleteSuccessAction,
-  editSuccessAction,
 } from '@/libs/Redux/react-redux/Learn_1/redux/Action'
+import { PopUp } from '@/component'
 
 const TodoItem = ({ props }) => {
+  const [popUp, setPopUp] = useState(false)
   const dispatch = useDispatch()
 
   const handleComplete = () => {
@@ -40,19 +42,11 @@ const TodoItem = ({ props }) => {
     dispatch(deletePendingAction())
   }
 
-  const handleEdit = ({ user }) => {
-    setTimeout(() => {
-      try {
-        dispatch(editSuccessAction(user))
-      } catch (err) {
-        // dispatch(deleteErrorAction(err))
-      }
-    }, 1000)
-    dispatch(deletePendingAction())
-  }
-
   return (
     <>
+      <div className={popUp ? ' during-popup' : ''}>
+        {popUp && <PopUp setPopUp={setPopUp} id={props.id} />}
+      </div>
       <div className="todo-list">
         <h4
           className={
@@ -62,12 +56,7 @@ const TodoItem = ({ props }) => {
         >
           {props.task}
         </h4>
-        <button
-          className="todo-item-edit"
-          onClick={() =>
-            handleEdit({ user: { name: 'Test1111', id: props.id } })
-          }
-        >
+        <button className="todo-item-edit" onClick={() => setPopUp(true)}>
           Edit
         </button>
         <button className="todo-item-delete" onClick={handleDelete}>
