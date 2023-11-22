@@ -35,6 +35,7 @@ const initialState = {
 
 const TodoReducer = (state = initialState, action) => {
   switch (action.type) {
+    // SET COMPLETE USER
     case ActionType.COMPLETE_USER_SUCCESS_ACTION:
       state.todo.map((item) => {
         if (item.id === action.payload) {
@@ -46,32 +47,16 @@ const TodoReducer = (state = initialState, action) => {
         ...state,
         loading: false,
       }
-    case ActionType.COMPLETE_USER_PENDING_ACTION:
-      return {
-        ...state,
-        loading: true,
-      }
-    case ActionType.COMPLETE_USER_ERROR_ACTION:
-      return {
-        ...state,
-        error: action.payload,
-      }
+
+    // SET DELETE USER
     case ActionType.DELETE_USER_SUCCESS_ACTION:
       return {
         ...state,
         loading: false,
         todo: state.todo.filter((item) => item.id !== action.payload),
       }
-    case ActionType.DELETE_USER_PENDING_ACTION:
-      return {
-        ...state,
-        loading: true,
-      }
-    case ActionType.DELETE_USER_ERROR_ACTION:
-      return {
-        ...state,
-        error: action.payload,
-      }
+
+    // SET EDIT USER
     case ActionType.EDIT_USER_SUCCESS_ACTION:
       state.todo.map((item) => {
         if (item.id === action.payload.id) {
@@ -83,12 +68,14 @@ const TodoReducer = (state = initialState, action) => {
         ...state,
         loading: false,
       }
-    case ActionType.EDIT_USER_PENDING_ACTION:
+
+    // SET PENDING AND ERROR
+    case ActionType.PENDING_ACTION:
       return {
         ...state,
         loading: true,
       }
-    case ActionType.EDIT_USER_ERROR_ACTION:
+    case ActionType.ERROR_ACTION:
       return {
         ...state,
         error: action.payload,

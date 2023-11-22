@@ -6,8 +6,8 @@ import { useDispatch } from 'react-redux'
 import './popup.css'
 import {
   editSuccessAction,
-  editPendingAction,
-  editErrorAction,
+  errorAction,
+  pendingAction,
 } from '@/libs/Redux/react-redux/Learn_1/redux/Action'
 
 const PopUp = (props) => {
@@ -22,14 +22,16 @@ const PopUp = (props) => {
   }
 
   const handleEdit = ({ user }) => {
+    if (user.name === '') return alert(' Please enter input ')
     setTimeout(() => {
       try {
         dispatch(editSuccessAction(user))
+        setPopUp(false)
       } catch (err) {
-        dispatch(editErrorAction(err))
+        dispatch(errorAction(err))
       }
     }, 1000)
-    dispatch(editPendingAction())
+    dispatch(pendingAction())
   }
 
   return (

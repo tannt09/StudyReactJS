@@ -7,12 +7,10 @@ import { useDispatch } from 'react-redux'
 import '@/libs/Redux/react-redux/Learn_1/styles.css'
 import '@/component/popup.css'
 import {
-  completeErrorAction,
-  completePendingAction,
   completeSuccessAction,
-  deleteErrorAction,
-  deletePendingAction,
   deleteSuccessAction,
+  errorAction,
+  pendingAction,
 } from '@/libs/Redux/react-redux/Learn_1/redux/Action'
 import { PopUp } from '@/component'
 
@@ -25,10 +23,10 @@ const TodoItem = ({ props }) => {
       try {
         dispatch(completeSuccessAction(props.id))
       } catch (err) {
-        dispatch(completeErrorAction(err))
+        dispatch(errorAction(err))
       }
     }, 1000)
-    dispatch(completePendingAction())
+    dispatch(pendingAction())
   }
 
   const handleDelete = () => {
@@ -36,10 +34,10 @@ const TodoItem = ({ props }) => {
       try {
         dispatch(deleteSuccessAction(props.id))
       } catch (err) {
-        dispatch(deleteErrorAction(err))
+        dispatch(errorAction(err))
       }
     }, 1000)
-    dispatch(deletePendingAction())
+    dispatch(pendingAction())
   }
 
   return (
