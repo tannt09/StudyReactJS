@@ -1,20 +1,29 @@
+.todo-list {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
 .todo-item-not-complete {
   text-decoration: line-through;
-  width: medium;
+  width: 100%;
   color: black;
-  padding: 20px;
+  display: flex;
 }
 
 .todo-item-complete {
   text-decoration: none;
-  width: medium;
+  width: 100%;
   color: black;
-  padding: 20px;
+  display: flex;
 }
+
 .todo-item-delete {
-  margin: auto;
   color: brown;
+  height: 100%;
+  margin-left: 10px;
 }
+
 .todo-item-edit {
-  margin: auto;
+  height: 100%;
 }

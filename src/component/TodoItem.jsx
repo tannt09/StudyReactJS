@@ -53,7 +53,7 @@ const TodoItem = ({ props }) => {
 
   return (
     <>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div className="todo-list">
         <h4
           className={
             props.completed ? 'todo-item-complete' : 'todo-item-not-complete'
